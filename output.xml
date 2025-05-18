@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-15T13:04:31.234483" rpa="false" schemaversion="5">
+<suite id="s1" name="assignmentSeleniumPython" source="c:\pythonselenium\assignmentSeleniumPython">
+<suite id="s1-s1" name="Robot" source="c:\pythonselenium\assignmentSeleniumPython\robot">
+<suite id="s1-s1-s1" name="Robot" source="c:\pythonselenium\assignmentSeleniumPython\robot\Robot">
+<suite id="s1-s1-s1-s1" name="Test Sample" source="c:\pythonselenium\assignmentSeleniumPython\robot\Robot\test_sample.robot">
+<test id="s1-s1-s1-s1-t1" name="Login with correct Username and Password" line="5">
+<kw name="Open Browser">
+<msg time="2025-05-15T13:04:31.323493" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>https://the-internet.herokuapp.com/login</arg>
+<arg>edge</arg>
+<status status="FAIL" start="2025-05-15T13:04:31.322807" elapsed="0.002397">No keyword with name 'Open Browser' found.</status>
+</kw>
+<kw name="Input Text">
+<arg>id:username</arg>
+<arg>tomsmith</arg>
+<status status="NOT RUN" start="2025-05-15T13:04:31.325991" elapsed="0.000207"/>
+</kw>
+<kw name="Input Text">
+<arg>id:password</arg>
+<arg>SuperSecretPassword!</arg>
+<status status="NOT RUN" start="2025-05-15T13:04:31.326623" elapsed="0.000113"/>
+</kw>
+<kw name="Click Button">
+<arg>class:radius</arg>
+<status status="NOT RUN" start="2025-05-15T13:04:31.327134" elapsed="0.000149"/>
+</kw>
+<kw name="Element Should Contain">
+<arg>id:flash</arg>
+<arg>You logged into a secure area!</arg>
+<status status="NOT RUN" start="2025-05-15T13:04:31.327991" elapsed="0.000202"/>
+</kw>
+<kw name="Close Browser">
+<status status="NOT RUN" start="2025-05-15T13:04:31.328808" elapsed="0.000163"/>
+</kw>
+<status status="FAIL" start="2025-05-15T13:04:31.320660" elapsed="0.008834">No keyword with name 'Open Browser' found.</status>
+</test>
+<status status="FAIL" start="2025-05-15T13:04:31.299189" elapsed="0.031507"/>
+</suite>
+<status status="FAIL" start="2025-05-15T13:04:31.296488" elapsed="0.035876"/>
+</suite>
+<status status="FAIL" start="2025-05-15T13:04:31.293706" elapsed="0.039951"/>
+</suite>
+<status status="FAIL" start="2025-05-15T13:04:31.269984" elapsed="0.065377"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="assignmentSeleniumPython" id="s1" pass="0" fail="1" skip="0">assignmentSeleniumPython</stat>
+<stat name="Robot" id="s1-s1" pass="0" fail="1" skip="0">assignmentSeleniumPython.Robot</stat>
+<stat name="Robot" id="s1-s1-s1" pass="0" fail="1" skip="0">assignmentSeleniumPython.Robot.Robot</stat>
+<stat name="Test Sample" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">assignmentSeleniumPython.Robot.Robot.Test Sample</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-15T13:04:31.303961" level="ERROR">Error in file 'c:\pythonselenium\assignmentSeleniumPython\robot\Robot\test_sample.robot' on line 2: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  c:\Users\GOWRISANKAR\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_debug_adapter
+  C:\pythonselenium
+  c:\Users\GOWRISANKAR\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src
+  c:\Users\GOWRISANKAR\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_ls\vendored
+  C:\Users\GOWRISANKAR\AppData\Local\Programs\Python\Python314\python314.zip
+  C:\Users\GOWRISANKAR\AppData\Local\Programs\Python\Python314\DLLs
+  C:\Users\GOWRISANKAR\AppData\Local\Programs\Python\Python314\Lib
+  C:\Users\GOWRISANKAR\AppData\Local\Programs\Python\Python314
+  C:\pythonselenium\assignmentSeleniumPython copy\ass
+  C:\pythonselenium\assignmentSeleniumPython copy\ass\Lib\site-packages</msg>
+</errors>
+</robot>
