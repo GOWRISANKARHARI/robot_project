@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-19T12:41:37.401114" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginPageTest" source="C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot">
+<test id="s1-t1" name="Validate Unsuccessful Login using invalid credentials" line="11">
+<kw name="Open the Browser with URL" type="SETUP">
+<msg time="2025-05-19T12:41:37.633243" level="FAIL">No keyword with name 'Open the Browser with URL' found.</msg>
+<status status="FAIL" start="2025-05-19T12:41:37.633188" elapsed="0.000105">No keyword with name 'Open the Browser with URL' found.</status>
+</kw>
+<kw name="Close Browser Session" type="TEARDOWN">
+<msg time="2025-05-19T12:41:37.634692" level="FAIL">No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</msg>
+<status status="FAIL" start="2025-05-19T12:41:37.634655" elapsed="0.000071">No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<status status="FAIL" start="2025-05-19T12:41:37.631100" elapsed="0.003793">Setup failed:
+No keyword with name 'Open the Browser with URL' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</test>
+<test id="s1-t2" name="Validate Unsuccessful Login for blank username" line="14">
+<kw name="Open the Browser with URL" type="SETUP">
+<msg time="2025-05-19T12:41:37.637239" level="FAIL">No keyword with name 'Open the Browser with URL' found.</msg>
+<status status="FAIL" start="2025-05-19T12:41:37.637180" elapsed="0.000099">No keyword with name 'Open the Browser with URL' found.</status>
+</kw>
+<kw name="Close Browser Session" type="TEARDOWN">
+<msg time="2025-05-19T12:41:37.638697" level="FAIL">No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</msg>
+<status status="FAIL" start="2025-05-19T12:41:37.638664" elapsed="0.000062">No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<status status="FAIL" start="2025-05-19T12:41:37.635477" elapsed="0.003448">Setup failed:
+No keyword with name 'Open the Browser with URL' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</test>
+<test id="s1-t3" name="Validate Unsuccssful Login for blank password" line="17">
+<kw name="Open the Browser with URL" type="SETUP">
+<msg time="2025-05-19T12:41:37.641169" level="FAIL">No keyword with name 'Open the Browser with URL' found.</msg>
+<status status="FAIL" start="2025-05-19T12:41:37.641136" elapsed="0.000063">No keyword with name 'Open the Browser with URL' found.</status>
+</kw>
+<kw name="Close Browser Session" type="TEARDOWN">
+<msg time="2025-05-19T12:41:37.642692" level="FAIL">No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</msg>
+<status status="FAIL" start="2025-05-19T12:41:37.642651" elapsed="0.000073">No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<status status="FAIL" start="2025-05-19T12:41:37.639675" elapsed="0.003205">Setup failed:
+No keyword with name 'Open the Browser with URL' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</test>
+<test id="s1-t4" name="Validate successful Login" line="20">
+<kw name="Open the Browser with URL" type="SETUP">
+<msg time="2025-05-19T12:41:37.645036" level="FAIL">No keyword with name 'Open the Browser with URL' found.</msg>
+<status status="FAIL" start="2025-05-19T12:41:37.644988" elapsed="0.000085">No keyword with name 'Open the Browser with URL' found.</status>
+</kw>
+<kw name="Close Browser Session" type="TEARDOWN">
+<msg time="2025-05-19T12:41:37.646414" level="FAIL">No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</msg>
+<status status="FAIL" start="2025-05-19T12:41:37.646378" elapsed="0.000090">No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<status status="FAIL" start="2025-05-19T12:41:37.643560" elapsed="0.003026">Setup failed:
+No keyword with name 'Open the Browser with URL' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser Session' found. Did you try using keyword 'SeleniumLibrary.Close Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</test>
+<doc>Test cases for the login page</doc>
+<status status="FAIL" start="2025-05-19T12:41:37.402537" elapsed="0.244822"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="LoginPageTest" id="s1" pass="0" fail="4" skip="0">LoginPageTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-19T12:41:37.628937" level="ERROR">Error in file 'C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot' on line 6: Resource file 'POM\Resources\LoginResources.robot' does not exist.</msg>
+<msg time="2025-05-19T12:41:37.629727" level="ERROR">Error in file 'C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot' on line 7: Resource file 'POM\Resources\DashboardResources.robot' does not exist.</msg>
+<msg time="2025-05-19T12:41:37.630243" level="ERROR">Error in file 'C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot' on line 8: Resource file 'POM\Resources\GenericResources.robot' does not exist.</msg>
+</errors>
+</robot>

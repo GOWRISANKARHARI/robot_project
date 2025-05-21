@@ -1,0 +1,38 @@
+==============================================================================
+TestCases                                                                     
+==============================================================================
+TestCases.ForgetPasswordTest :: Test cases for the Fogot your password        
+==============================================================================
+Validate Reset Password Functionality                                   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\ForgetPasswordTest.robot:13
+    T:  Validate Reset Password Functionality    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\ForgetPasswordTest.robot:15
+      ForgetPasswordResources.Verify Forget Your Password Page opens    
+______________________________________________________________________________
+| FAIL |
+No keyword with name 'ForgetPasswordResources.Verify Forget Your Password Page opens' found. Did you mean:
+    ForgetPasswordResources.Verify Forgot Your Password page Opens
+------------------------------------------------------------------------------
+Validate Cancel Functionality                                           
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\ForgetPasswordTest.robot:18
+    T:  Validate Cancel Functionality    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\ForgetPasswordTest.robot:20
+      ForgetPasswordResources.Verify Forget Your Password Page opens    
+______________________________________________________________________________
+| FAIL |
+No keyword with name 'ForgetPasswordResources.Verify Forget Your Password Page opens' found. Did you mean:
+    ForgetPasswordResources.Verify Forgot Your Password page Opens
+------------------------------------------------------------------------------
+TestCases.ForgetPasswordTest :: Test cases for the Fogot your pass... | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+TestCases                                                             | FAIL |
+2 tests, 0 passed, 2 failed
+==============================================================================
+Output:  C:\pythonselenium\pabot_results\0\output.xml

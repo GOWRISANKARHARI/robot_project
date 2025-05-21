@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-19T14:08:53.487754" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="C:\pythonselenium\page_object_model\TestCases">
+<suite id="s1-s1" name="LoginPageTest" source="C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot">
+<test id="s1-s1-t1" name="Validate Unsuccessful Login using invalid credentials" line="14">
+<kw name="Open the Browser with URL" owner="GenericResources" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:08:54.005139" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-19T14:08:54.004796" elapsed="1.989009"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:08:55.998997" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-19T14:08:55.998025" elapsed="4.530851"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T14:09:00.529546" elapsed="0.039912"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-19T14:09:00.569725" elapsed="0.003270"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:08:54.003770" elapsed="6.569865"/>
+</kw>
+<kw name="Fill the login form" owner="LoginResources">
+<msg time="2025-05-19T14:09:00.576356" level="FAIL">Variable '${invalid_password}' not found. Did you mean:
+    ${invalid_passeord}
+    ${valid_passeord}</msg>
+<arg>${valid_username}</arg>
+<arg>${invalid_password}</arg>
+<status status="FAIL" start="2025-05-19T14:09:00.574386" elapsed="0.002158">Variable '${invalid_password}' not found. Did you mean:
+    ${invalid_passeord}
+    ${valid_passeord}</status>
+</kw>
+<kw name="Verify the error message is correct" owner="LoginResources">
+<status status="NOT RUN" start="2025-05-19T14:09:00.578958" elapsed="0.000295"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-19T14:09:00.580591" elapsed="2.219954"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:00.579829" elapsed="2.221064"/>
+</kw>
+<tag>invalid</tag>
+<status status="FAIL" start="2025-05-19T14:08:54.002549" elapsed="8.798497">Variable '${invalid_password}' not found. Did you mean:
+    ${invalid_passeord}
+    ${valid_passeord}</status>
+</test>
+<test id="s1-s1-t2" name="Validate Unsuccessful Login for blank username" line="18">
+<kw name="Open the Browser with URL" owner="GenericResources" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:02.803442" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-19T14:09:02.803114" elapsed="1.433702"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:04.237919" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-19T14:09:04.237181" elapsed="6.108122"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T14:09:10.345570" elapsed="0.037343"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-19T14:09:10.383333" elapsed="0.003262"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:02.802620" elapsed="7.584206"/>
+</kw>
+<kw name="Fill the login form" owner="LoginResources">
+<msg time="2025-05-19T14:09:10.388689" level="FAIL">Variable '${blank_username}' not found.</msg>
+<arg>${blank_username}</arg>
+<arg>${valid_password}</arg>
+<status status="FAIL" start="2025-05-19T14:09:10.387248" elapsed="0.001567">Variable '${blank_username}' not found.</status>
+</kw>
+<kw name="LoginResources.Verify th error message is displayed for username">
+<status status="NOT RUN" start="2025-05-19T14:09:10.391464" elapsed="0.000414"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-19T14:09:10.392910" elapsed="2.181565"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:10.392349" elapsed="2.182315"/>
+</kw>
+<tag>blank username</tag>
+<status status="FAIL" start="2025-05-19T14:09:02.802085" elapsed="9.772651">Variable '${blank_username}' not found.</status>
+</test>
+<test id="s1-s1-t3" name="Validate Unsuccssful Login for blank password" line="22">
+<kw name="Open the Browser with URL" owner="GenericResources" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:12.576261" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-19T14:09:12.576012" elapsed="1.489794"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:14.066629" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-19T14:09:14.066064" elapsed="7.738731"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T14:09:21.805164" elapsed="0.041679"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-19T14:09:21.847117" elapsed="0.002528"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:12.575538" elapsed="9.274401"/>
+</kw>
+<kw name="Fill the login form" owner="LoginResources">
+<msg time="2025-05-19T14:09:21.852180" level="FAIL">Variable '${blank_password}' not found. Did you mean:
+    ${blank_passeord}</msg>
+<arg>${valid_username}</arg>
+<arg>${blank_password}</arg>
+<status status="FAIL" start="2025-05-19T14:09:21.850427" elapsed="0.001858">Variable '${blank_password}' not found. Did you mean:
+    ${blank_passeord}</status>
+</kw>
+<kw name="Verify the error message is displayed for password" owner="LoginResources">
+<status status="NOT RUN" start="2025-05-19T14:09:21.854450" elapsed="0.000471"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-19T14:09:21.858061" elapsed="2.220397"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:21.856889" elapsed="2.221871"/>
+</kw>
+<tag>blank password</tag>
+<status status="FAIL" start="2025-05-19T14:09:12.575150" elapsed="11.503738">Variable '${blank_password}' not found. Did you mean:
+    ${blank_passeord}</status>
+</test>
+<test id="s1-s1-t4" name="Validate successful Login" line="26">
+<kw name="Open the Browser with URL" owner="GenericResources" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:24.081387" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-19T14:09:24.080997" elapsed="7.208026"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:31.289952" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-19T14:09:31.289473" elapsed="4.083951"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T14:09:35.373725" elapsed="0.035598"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-19T14:09:35.409642" elapsed="0.002805"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:24.080254" elapsed="11.332383"/>
+</kw>
+<kw name="Fill the login form" owner="LoginResources">
+<msg time="2025-05-19T14:09:35.415015" level="FAIL">Variable '${valid_password}' not found. Did you mean:
+    ${valid_passeord}
+    ${invalid_passeord}</msg>
+<arg>${valid_username}</arg>
+<arg>${valid_password}</arg>
+<status status="FAIL" start="2025-05-19T14:09:35.413002" elapsed="0.002131">Variable '${valid_password}' not found. Did you mean:
+    ${valid_passeord}
+    ${invalid_passeord}</status>
+</kw>
+<kw name="Verify Dashboard Page opens" owner="DashboardResources">
+<status status="NOT RUN" start="2025-05-19T14:09:35.416772" elapsed="0.000370"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-19T14:09:35.418401" elapsed="2.170202"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:35.417724" elapsed="2.171174"/>
+</kw>
+<tag>valid</tag>
+<status status="FAIL" start="2025-05-19T14:09:24.079507" elapsed="13.509545">Variable '${valid_password}' not found. Did you mean:
+    ${valid_passeord}
+    ${invalid_passeord}</status>
+</test>
+<doc>Test cases for the login page</doc>
+<status status="FAIL" start="2025-05-19T14:08:53.541082" elapsed="44.048610"/>
+</suite>
+<status status="FAIL" start="2025-05-19T14:08:53.519725" elapsed="44.071080"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">blank password</stat>
+<stat pass="0" fail="1" skip="0">blank username</stat>
+<stat pass="0" fail="1" skip="0">invalid</stat>
+<stat pass="0" fail="1" skip="0">valid</stat>
+</tag>
+<suite>
+<stat name="TestCases" id="s1" pass="0" fail="4" skip="0">TestCases</stat>
+<stat name="LoginPageTest" id="s1-s1" pass="0" fail="4" skip="0">TestCases.LoginPageTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

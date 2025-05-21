@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-19T14:08:53.486665" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="C:\pythonselenium\page_object_model\TestCases">
+<suite id="s1-s1" name="ForgetPasswordTest" source="C:\pythonselenium\page_object_model\TestCases\ForgetPasswordTest.robot">
+<test id="s1-s1-t1" name="Validate Reset Password Functionality" line="13">
+<kw name="Open the Browser with URL" owner="GenericResources" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:08:54.004855" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-19T14:08:54.004465" elapsed="1.938751"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:08:55.945081" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-19T14:08:55.943781" elapsed="6.557103"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T14:09:02.501387" elapsed="0.037689"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-19T14:09:02.539327" elapsed="0.001821"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:08:54.002874" elapsed="8.538455"/>
+</kw>
+<kw name="Go to Forgot Your Password Page" owner="LoginResources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:02.544003" level="INFO">Clicking element 'xpath://div[@class='orangehrm-login-forgot']/p'.</msg>
+<arg>${forgot_password_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T14:09:02.542560" elapsed="3.544625"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:02.541685" elapsed="3.545701"/>
+</kw>
+<kw name="ForgetPasswordResources.Verify Forget Your Password Page opens">
+<msg time="2025-05-19T14:09:06.089381" level="FAIL">No keyword with name 'ForgetPasswordResources.Verify Forget Your Password Page opens' found. Did you mean:
+    ForgetPasswordResources.Verify Forgot Your Password page Opens</msg>
+<status status="FAIL" start="2025-05-19T14:09:06.089052" elapsed="0.000428">No keyword with name 'ForgetPasswordResources.Verify Forget Your Password Page opens' found. Did you mean:
+    ForgetPasswordResources.Verify Forgot Your Password page Opens</status>
+</kw>
+<kw name="ForgetPasswordResources.Fill the Forget Password Page">
+<status status="NOT RUN" start="2025-05-19T14:09:06.089780" elapsed="0.000145"/>
+</kw>
+<kw name="Verify the message" owner="ForgetPasswordResources">
+<status status="NOT RUN" start="2025-05-19T14:09:06.090128" elapsed="0.000136"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-19T14:09:06.091030" elapsed="2.210221"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:06.090588" elapsed="2.210843"/>
+</kw>
+<status status="FAIL" start="2025-05-19T14:08:54.001509" elapsed="14.300016">No keyword with name 'ForgetPasswordResources.Verify Forget Your Password Page opens' found. Did you mean:
+    ForgetPasswordResources.Verify Forgot Your Password page Opens</status>
+</test>
+<test id="s1-s1-t2" name="Validate Cancel Functionality" line="18">
+<kw name="Open the Browser with URL" owner="GenericResources" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:08.303503" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-19T14:09:08.303197" elapsed="1.500298"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:09.804221" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-19T14:09:09.803759" elapsed="6.404579"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-19T14:09:16.208641" elapsed="0.042339"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-19T14:09:16.251429" elapsed="0.002456"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:08.302709" elapsed="7.951370"/>
+</kw>
+<kw name="Go to Forgot Your Password Page" owner="LoginResources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-19T14:09:16.255484" level="INFO">Clicking element 'xpath://div[@class='orangehrm-login-forgot']/p'.</msg>
+<arg>${forgot_password_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T14:09:16.254995" elapsed="1.572663"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:16.254368" elapsed="1.573642"/>
+</kw>
+<kw name="ForgetPasswordResources.Verify Forget Your Password Page opens">
+<msg time="2025-05-19T14:09:17.831779" level="FAIL">No keyword with name 'ForgetPasswordResources.Verify Forget Your Password Page opens' found. Did you mean:
+    ForgetPasswordResources.Verify Forgot Your Password page Opens</msg>
+<status status="FAIL" start="2025-05-19T14:09:17.831262" elapsed="0.000705">No keyword with name 'ForgetPasswordResources.Verify Forget Your Password Page opens' found. Did you mean:
+    ForgetPasswordResources.Verify Forgot Your Password page Opens</status>
+</kw>
+<kw name="ForgetPasswordResources.Cancel the Reset Password">
+<status status="NOT RUN" start="2025-05-19T14:09:17.832382" elapsed="0.000224"/>
+</kw>
+<kw name="Verify that Login Page is displayed" owner="ForgetPasswordResources">
+<status status="NOT RUN" start="2025-05-19T14:09:17.832870" elapsed="0.000198"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-19T14:09:17.833931" elapsed="2.185300"/>
+</kw>
+<status status="PASS" start="2025-05-19T14:09:17.833448" elapsed="2.186101"/>
+</kw>
+<status status="FAIL" start="2025-05-19T14:09:08.302260" elapsed="11.717394">No keyword with name 'ForgetPasswordResources.Verify Forget Your Password Page opens' found. Did you mean:
+    ForgetPasswordResources.Verify Forgot Your Password page Opens</status>
+</test>
+<doc>Test cases for the Fogot your password</doc>
+<status status="FAIL" start="2025-05-19T14:08:53.539697" elapsed="26.480559"/>
+</suite>
+<status status="FAIL" start="2025-05-19T14:08:53.519126" elapsed="26.501655"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TestCases" id="s1" pass="0" fail="2" skip="0">TestCases</stat>
+<stat name="ForgetPasswordTest" id="s1-s1" pass="0" fail="2" skip="0">TestCases.ForgetPasswordTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

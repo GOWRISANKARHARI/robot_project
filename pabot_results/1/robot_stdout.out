@@ -1,0 +1,73 @@
+==============================================================================
+TestCases                                                                     
+==============================================================================
+TestCases.LoginPageTest :: Test cases for the login page                      
+==============================================================================
+Validate Unsuccessful Login using invalid credentials                   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot:14
+    T:  Validate Unsuccessful Login using invalid credentials    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot:16
+      Fill the login form    ${valid_username}    ${invalid_password}
+      |  ${valid_username} = Admin (str)
+      |  ${invalid_password} = <Unable to define variable value>
+______________________________________________________________________________
+| FAIL |
+Variable '${invalid_password}' not found. Did you mean:
+    ${invalid_passeord}
+    ${valid_passeord}
+------------------------------------------------------------------------------
+Validate Unsuccessful Login for blank username                          
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot:18
+    T:  Validate Unsuccessful Login for blank username    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot:20
+      Fill the login form    ${blank_username}    ${valid_password}
+      |  ${blank_username} = <Unable to define variable value>
+      |  ${valid_password} = <Unable to define variable value>
+______________________________________________________________________________
+| FAIL |
+Variable '${blank_username}' not found.
+------------------------------------------------------------------------------
+Validate Unsuccssful Login for blank password                           
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot:22
+    T:  Validate Unsuccssful Login for blank password    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot:24
+      Fill the login form    ${valid_username}    ${blank_password}
+      |  ${valid_username} = Admin (str)
+      |  ${blank_password} = <Unable to define variable value>
+______________________________________________________________________________
+| FAIL |
+Variable '${blank_password}' not found. Did you mean:
+    ${blank_passeord}
+------------------------------------------------------------------------------
+Validate successful Login                                               
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot:26
+    T:  Validate successful Login    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\pythonselenium\page_object_model\TestCases\LoginPageTest.robot:28
+      Fill the login form    ${valid_username}    ${valid_password}
+      |  ${valid_username} = Admin (str)
+      |  ${valid_password} = <Unable to define variable value>
+______________________________________________________________________________
+| FAIL |
+Variable '${valid_password}' not found. Did you mean:
+    ${valid_passeord}
+    ${invalid_passeord}
+------------------------------------------------------------------------------
+TestCases.LoginPageTest :: Test cases for the login page              | FAIL |
+4 tests, 0 passed, 4 failed
+==============================================================================
+TestCases                                                             | FAIL |
+4 tests, 0 passed, 4 failed
+==============================================================================
+Output:  C:\pythonselenium\pabot_results\1\output.xml

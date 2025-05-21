@@ -1,75 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-15T13:04:31.234483" rpa="false" schemaversion="5">
-<suite id="s1" name="assignmentSeleniumPython" source="c:\pythonselenium\assignmentSeleniumPython">
-<suite id="s1-s1" name="Robot" source="c:\pythonselenium\assignmentSeleniumPython\robot">
-<suite id="s1-s1-s1" name="Robot" source="c:\pythonselenium\assignmentSeleniumPython\robot\Robot">
-<suite id="s1-s1-s1-s1" name="Test Sample" source="c:\pythonselenium\assignmentSeleniumPython\robot\Robot\test_sample.robot">
-<test id="s1-s1-s1-s1-t1" name="Login with correct Username and Password" line="5">
-<kw name="Open Browser">
-<msg time="2025-05-15T13:04:31.323493" level="FAIL">No keyword with name 'Open Browser' found.</msg>
-<arg>https://the-internet.herokuapp.com/login</arg>
-<arg>edge</arg>
-<status status="FAIL" start="2025-05-15T13:04:31.322807" elapsed="0.002397">No keyword with name 'Open Browser' found.</status>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-20T21:24:23.499703" rpa="false" schemaversion="5">
+<suite id="s1" name="Order" source="C:\pythonselenium\SwagLabProject\TestCases\order.robot">
+<test id="s1-t1" name="login using csv data" line="11">
+<kw name="Validate the links">
+<kw name="Open the url with the browser" owner="GenericResource">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:23.940418" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<arg>${browser}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T21:24:23.939887" elapsed="6.717652"/>
 </kw>
-<kw name="Input Text">
-<arg>id:username</arg>
-<arg>tomsmith</arg>
-<status status="NOT RUN" start="2025-05-15T13:04:31.325991" elapsed="0.000207"/>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:30.658879" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T21:24:30.658494" elapsed="1.906428"/>
 </kw>
-<kw name="Input Text">
-<arg>id:password</arg>
-<arg>SuperSecretPassword!</arg>
-<status status="NOT RUN" start="2025-05-15T13:04:31.326623" elapsed="0.000113"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T21:24:32.565573" elapsed="0.273142"/>
 </kw>
-<kw name="Click Button">
-<arg>class:radius</arg>
-<status status="NOT RUN" start="2025-05-15T13:04:31.327134" elapsed="0.000149"/>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-20T21:24:32.839018" elapsed="0.006791"/>
 </kw>
-<kw name="Element Should Contain">
-<arg>id:flash</arg>
-<arg>You logged into a secure area!</arg>
-<status status="NOT RUN" start="2025-05-15T13:04:31.327991" elapsed="0.000202"/>
+<status status="PASS" start="2025-05-20T21:24:23.939020" elapsed="8.907091"/>
 </kw>
-<kw name="Close Browser">
-<status status="NOT RUN" start="2025-05-15T13:04:31.328808" elapsed="0.000163"/>
+<kw name="Login to the website with login credentials" owner="Login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:32.848162" level="INFO">Typing text 'standard_user' into text field 'css:input[id='user-name']'.</msg>
+<arg>${username_field}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:32.847441" elapsed="0.135280"/>
 </kw>
-<status status="FAIL" start="2025-05-15T13:04:31.320660" elapsed="0.008834">No keyword with name 'Open Browser' found.</status>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:32.984118" level="INFO">Typing password into text field 'css:input[id='password']'.</msg>
+<msg time="2025-05-20T21:24:32.996251" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${password_field}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:32.983437" elapsed="0.046232"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:33.030447" level="INFO">Clicking element 'css:input[id='login-button']'.</msg>
+<arg>${login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:33.030006" elapsed="0.280760"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T21:24:32.846603" elapsed="0.464328"/>
+</kw>
+<kw name="Checkout the product" owner="orderResource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:33.311759" level="INFO">Clicking element 'xpath:(//*[@class="btn btn_primary btn_small btn_inventory "])[1]'.</msg>
+<arg>${product1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:33.311563" elapsed="0.248033"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:33.560284" level="INFO">Clicking element 'xpath://*[@class="shopping_cart_link"]'.</msg>
+<arg>${your_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:33.559979" elapsed="0.240256"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T21:24:35.801424" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T21:24:33.800464" elapsed="2.001286"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:35.802843" level="INFO">Clicking button 'xpath://*[@id="checkout"]'.</msg>
+<arg>${checkout}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:35.802143" elapsed="0.243971"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:36.046694" level="INFO">Typing text 'hari' into text field 'xpath:(//*[@class="input_error form_input"])[1]'.</msg>
+<arg>${first_name}</arg>
+<arg>hari</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:36.046380" elapsed="0.036781"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:36.083745" level="INFO">Typing text 's' into text field 'xpath:(//*[@class="input_error form_input"])[2]'.</msg>
+<arg>${last_name}</arg>
+<arg>s</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:36.083412" elapsed="0.027460"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:36.111452" level="INFO">Typing text '635236' into text field 'xpath:(//*[@class="input_error form_input"])[3]'.</msg>
+<arg>${zip}</arg>
+<arg>635236</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:36.111141" elapsed="0.037909"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:36.149704" level="INFO">Clicking element 'xpath://*[@class="submit-button btn btn_primary cart_button btn_action"]'.</msg>
+<arg>${continue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:36.149350" elapsed="0.232485"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:36.382318" level="INFO">Clicking element 'xpath://*[@class="btn btn_action btn_medium cart_button"]'.</msg>
+<arg>${finish}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T21:24:36.382082" elapsed="0.239807"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-20T21:24:36.622757" level="INFO">Verifying element 'xpath://*[@class="complete-header"]' contains exact text 'Thank you for your order!'.</msg>
+<arg>${verification}</arg>
+<arg>Thank you for your order!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-20T21:24:36.622272" elapsed="0.022158"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:24:33.311229" elapsed="3.333371"/>
+</kw>
+<kw name="Close Browser Sessions" owner="GenericResource">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-20T21:24:36.645172" elapsed="3.092953"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:24:36.644856" elapsed="3.093730"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-05-20T21:24:23.938572" elapsed="15.800283"/>
+</kw>
+<status status="PASS" start="2025-05-20T21:24:23.937564" elapsed="15.801849"/>
 </test>
-<status status="FAIL" start="2025-05-15T13:04:31.299189" elapsed="0.031507"/>
-</suite>
-<status status="FAIL" start="2025-05-15T13:04:31.296488" elapsed="0.035876"/>
-</suite>
-<status status="FAIL" start="2025-05-15T13:04:31.293706" elapsed="0.039951"/>
-</suite>
-<status status="FAIL" start="2025-05-15T13:04:31.269984" elapsed="0.065377"/>
+<doc>Checkout the product</doc>
+<status status="PASS" start="2025-05-20T21:24:23.501543" elapsed="16.239165"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="assignmentSeleniumPython" id="s1" pass="0" fail="1" skip="0">assignmentSeleniumPython</stat>
-<stat name="Robot" id="s1-s1" pass="0" fail="1" skip="0">assignmentSeleniumPython.Robot</stat>
-<stat name="Robot" id="s1-s1-s1" pass="0" fail="1" skip="0">assignmentSeleniumPython.Robot.Robot</stat>
-<stat name="Test Sample" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">assignmentSeleniumPython.Robot.Robot.Test Sample</stat>
+<stat name="Order" id="s1" pass="1" fail="0" skip="0">Order</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-05-15T13:04:31.303961" level="ERROR">Error in file 'c:\pythonselenium\assignmentSeleniumPython\robot\Robot\test_sample.robot' on line 2: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  c:\Users\GOWRISANKAR\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_debug_adapter
-  C:\pythonselenium
-  c:\Users\GOWRISANKAR\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src
-  c:\Users\GOWRISANKAR\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_ls\vendored
-  C:\Users\GOWRISANKAR\AppData\Local\Programs\Python\Python314\python314.zip
-  C:\Users\GOWRISANKAR\AppData\Local\Programs\Python\Python314\DLLs
-  C:\Users\GOWRISANKAR\AppData\Local\Programs\Python\Python314\Lib
-  C:\Users\GOWRISANKAR\AppData\Local\Programs\Python\Python314
-  C:\pythonselenium\assignmentSeleniumPython copy\ass
-  C:\pythonselenium\assignmentSeleniumPython copy\ass\Lib\site-packages</msg>
 </errors>
 </robot>

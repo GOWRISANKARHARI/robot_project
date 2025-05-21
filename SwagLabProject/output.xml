@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.14.0a7 on win32)" generated="2025-05-20T17:17:06.604840" rpa="false" schemaversion="5">
+<suite id="s1" name="Link" source="C:\pythonselenium\SwagLabProject\TestCases\Link.robot">
+<test id="s1-t1" name="login using csv data" line="12">
+<kw name="Validate the links">
+<kw name="Open the url with the browser" owner="GenericResource">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:06.919138" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<arg>${browser}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T17:17:06.919008" elapsed="6.009237"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:12.929620" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T17:17:12.929044" elapsed="1.184926"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.114214" elapsed="0.277921"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.392482" elapsed="0.021704"/>
+</kw>
+<status status="PASS" start="2025-05-20T17:17:06.918473" elapsed="7.496140"/>
+</kw>
+<kw name="Login to the website with login credentials" owner="Login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.416680" level="INFO">Typing text 'standard_user' into text field 'css:input[id='user-name']'.</msg>
+<arg>${username_field}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.415889" elapsed="0.114404"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.530879" level="INFO">Typing password into text field 'css:input[id='password']'.</msg>
+<msg time="2025-05-20T17:17:14.544031" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${password_field}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.530547" elapsed="0.041362"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.572291" level="INFO">Clicking element 'css:input[id='login-button']'.</msg>
+<arg>${login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.572091" elapsed="0.288637"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T17:17:14.415123" elapsed="0.445723"/>
+</kw>
+<kw name="Verify the logged in or not" owner="DashboardResource">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.861430" level="INFO">Verifying element 'xpath://*[@class="app_logo"]' contains exact text 'Swag Labs'.</msg>
+<arg>${Title_text}</arg>
+<arg>Swag Labs</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.861261" elapsed="0.012244"/>
+</kw>
+<status status="PASS" start="2025-05-20T17:17:14.861034" elapsed="0.012647"/>
+</kw>
+<kw name="Get all the link" owner="DashboardResource">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.878224" level="INFO">@{elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="b7690716-5bb2-4632-adfc-100a2d31ffbc")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement ...</msg>
+<var>@{elements}</var>
+<arg>//a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.874215" elapsed="0.004049"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-20T17:17:14.878512" level="INFO">${all_links} = []</msg>
+<var>${all_links}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.878396" elapsed="0.000136"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.886343" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.878923" elapsed="0.007516"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.887479" elapsed="0.000183"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.886900" elapsed="0.000824"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="b7690716-5bb2-4632-adfc-100a2d31ffbc")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.878796" elapsed="0.008969"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.893186" level="INFO">${href} = https://saucelabs.com/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.888000" elapsed="0.005268"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.894225" elapsed="0.000303"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.893571" elapsed="0.001045"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="74ec4cc0-1684-4a88-971f-7f25f2d672fc")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.887896" elapsed="0.006764"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.900602" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.894906" elapsed="0.005753"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.901220" elapsed="0.000155"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.900875" elapsed="0.000559"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="d352100d-1f85-4672-aa26-66d6232b392b")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.894801" elapsed="0.006676"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.906835" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.901715" elapsed="0.005185"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.907607" elapsed="0.000152"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.907304" elapsed="0.000514"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="62de0e4f-f099-47de-aceb-32ab5283d93b")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.901615" elapsed="0.006253"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.912752" level="INFO">${href} = None</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.908125" elapsed="0.004667"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.912936" elapsed="0.000267"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="d97a3f8a-8c6a-46cc-8375-6af6076e8560")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.907992" elapsed="0.005260"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.920160" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.913523" elapsed="0.006685"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.920834" elapsed="0.000165"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.920467" elapsed="0.000715"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="64fec31d-dc73-4df1-9bd2-df3075473978")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.913383" elapsed="0.007877"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.927246" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.921482" elapsed="0.005834"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.927892" elapsed="0.000380"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.927550" elapsed="0.000791"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="2ef365be-0f6d-4c3d-bd76-9b5a3c72bd46")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.921383" elapsed="0.007003"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.934819" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.928643" elapsed="0.006251"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.936076" elapsed="0.000334"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.935402" elapsed="0.001099"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="1436bc30-0123-4816-95d5-18f34157ff28")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.928515" elapsed="0.008033"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.942502" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.936794" elapsed="0.005764"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.943091" elapsed="0.000181"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.942762" elapsed="0.000578"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="bfdf01b3-596a-402c-a99f-eb12dfb0c207")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.936676" elapsed="0.006711"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.949411" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.943599" elapsed="0.005876"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.949991" elapsed="0.000164"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.949705" elapsed="0.000514"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="2161be87-14fa-4eea-a92b-89d6ab5debdf")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.943508" elapsed="0.006763"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.955096" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.950518" elapsed="0.004630"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.955628" elapsed="0.000134"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.955334" elapsed="0.000487"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="08f247c2-7339-483c-8ff1-f208ba3bc26e")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.950418" elapsed="0.005450"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.961340" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.956055" elapsed="0.005329"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.961785" elapsed="0.000118"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.961540" elapsed="0.000433"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="2cd6903e-fb90-4d5e-b7d8-4cbff1a38ec5")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.955972" elapsed="0.006036"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.967174" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.962195" elapsed="0.005021"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.967620" elapsed="0.000136"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.967371" elapsed="0.000432"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="4112a38d-b37d-4831-a866-7e12d286cbfc")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.962108" elapsed="0.005728"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.972626" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.968000" elapsed="0.004667"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.973055" elapsed="0.000110"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.972833" elapsed="0.000376"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="12cda7ba-1f36-4226-8ce7-fb64c41e6703")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.967927" elapsed="0.005315"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.977901" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.973402" elapsed="0.004546"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.978400" elapsed="0.000119"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.978124" elapsed="0.000441"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="967ed99b-0bf3-4ae3-af56-a23ea7a4b526")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.973328" elapsed="0.005275"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.982929" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.978766" elapsed="0.004208"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.983427" elapsed="0.000781"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.983154" elapsed="0.001121"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="be73d651-77ab-4c5d-ad09-6b26be6733a7")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.978696" elapsed="0.005622"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.988982" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.984541" elapsed="0.004478"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.989384" elapsed="0.000111"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.989152" elapsed="0.000402"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="e1e9f847-0f88-46bd-a275-fc271e5d27ea")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.984434" elapsed="0.005169"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:14.994287" level="INFO">${href} = https://twitter.com/saucelabs</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.989792" elapsed="0.004535"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.994724" elapsed="0.000114"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.994485" elapsed="0.000398"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="1625a637-79f2-4b19-9988-7f4ec92dd971")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.989717" elapsed="0.005199"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.000807" level="INFO">${href} = https://www.facebook.com/saucelabs</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:14.995078" elapsed="0.005785"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.001308" elapsed="0.000115"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.001065" elapsed="0.000406"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="e063d7b6-6da0-4b23-85e8-867b364ef71a")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:14.995005" elapsed="0.006500"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.006423" level="INFO">${href} = https://www.linkedin.com/company/sauce-labs/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.001668" elapsed="0.004800"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.006890" elapsed="0.000120"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.006635" elapsed="0.000424"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="a7eae8e3-591b-4842-9a17-221c6d1cb637")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.001596" elapsed="0.005496"/>
+</iter>
+<var>${el}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2025-05-20T17:17:14.878595" elapsed="0.128539"/>
+</for>
+<return>
+<value>${all_links}</value>
+<status status="PASS" start="2025-05-20T17:17:15.007207" elapsed="0.000059"/>
+</return>
+<status status="PASS" start="2025-05-20T17:17:14.873940" elapsed="0.133416"/>
+</kw>
+<kw name="Verify all the link will be working well or not" owner="DashboardResource">
+<kw name="Get all the link" owner="DashboardResource">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.012270" level="INFO">@{elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="b7690716-5bb2-4632-adfc-100a2d31ffbc")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement ...</msg>
+<var>@{elements}</var>
+<arg>//a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.007867" elapsed="0.004454"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-20T17:17:15.012590" level="INFO">${all_links} = []</msg>
+<var>${all_links}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.012468" elapsed="0.000145"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.017792" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.012910" elapsed="0.004944"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.018373" elapsed="0.000132"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.018093" elapsed="0.000470"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="b7690716-5bb2-4632-adfc-100a2d31ffbc")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.012825" elapsed="0.005792"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.023487" level="INFO">${href} = https://saucelabs.com/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.018814" elapsed="0.004723"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.024006" elapsed="0.000109"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.023724" elapsed="0.000437"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="74ec4cc0-1684-4a88-971f-7f25f2d672fc")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.018726" elapsed="0.005469"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.029032" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.024352" elapsed="0.004720"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.029497" elapsed="0.000142"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.029247" elapsed="0.000438"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="d352100d-1f85-4672-aa26-66d6232b392b")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.024284" elapsed="0.005434"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.034786" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.029879" elapsed="0.004956"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.035260" elapsed="0.000112"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.035018" elapsed="0.000400"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="62de0e4f-f099-47de-aceb-32ab5283d93b")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.029809" elapsed="0.005643"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.039399" level="INFO">${href} = None</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.035609" elapsed="0.003829"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.039584" elapsed="0.000201"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="d97a3f8a-8c6a-46cc-8375-6af6076e8560")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.035541" elapsed="0.004313"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.044579" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.040179" elapsed="0.004435"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.044941" elapsed="0.000105"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.044741" elapsed="0.000350"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="64fec31d-dc73-4df1-9bd2-df3075473978")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.040077" elapsed="0.005047"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.049873" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.045280" elapsed="0.004646"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.050440" elapsed="0.000116"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.050116" elapsed="0.000485"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="2ef365be-0f6d-4c3d-bd76-9b5a3c72bd46")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.045210" elapsed="0.005424"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.055714" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.050787" elapsed="0.004973"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.056257" elapsed="0.000123"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.055928" elapsed="0.000518"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="1436bc30-0123-4816-95d5-18f34157ff28")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.050717" elapsed="0.005765"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.062282" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.056671" elapsed="0.005658"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.062781" elapsed="0.000147"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.062507" elapsed="0.000469"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="bfdf01b3-596a-402c-a99f-eb12dfb0c207")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.056578" elapsed="0.006434"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.068633" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.063188" elapsed="0.005491"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.069133" elapsed="0.000130"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.068852" elapsed="0.000456"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="2161be87-14fa-4eea-a92b-89d6ab5debdf")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.063110" elapsed="0.006233"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.076477" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.069515" elapsed="0.007030"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.077034" elapsed="0.000155"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.076733" elapsed="0.000518"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="08f247c2-7339-483c-8ff1-f208ba3bc26e")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.069440" elapsed="0.007855"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.082811" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.077498" elapsed="0.005368"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.083333" elapsed="0.000125"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.083046" elapsed="0.000463"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="2cd6903e-fb90-4d5e-b7d8-4cbff1a38ec5")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.077407" elapsed="0.006138"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.089046" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.083727" elapsed="0.005367"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.089542" elapsed="0.000142"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.089272" elapsed="0.000470"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="4112a38d-b37d-4831-a866-7e12d286cbfc")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.083643" elapsed="0.006142"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.094959" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.089974" elapsed="0.005052"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.095677" elapsed="0.000144"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.095338" elapsed="0.000541"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="12cda7ba-1f36-4226-8ce7-fb64c41e6703")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.089899" elapsed="0.006018"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.101668" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.096121" elapsed="0.005602"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.102284" elapsed="0.000298"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.101901" elapsed="0.000763"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="967ed99b-0bf3-4ae3-af56-a23ea7a4b526")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.096029" elapsed="0.006681"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.107623" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.102910" elapsed="0.004751"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.108086" elapsed="0.000143"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.107838" elapsed="0.000450"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="be73d651-77ab-4c5d-ad09-6b26be6733a7")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.102817" elapsed="0.005532"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.113498" level="INFO">${href} = https://www.saucedemo.com/inventory.html#</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.108552" elapsed="0.004997"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.113989" elapsed="0.000113"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.113751" elapsed="0.000398"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="e1e9f847-0f88-46bd-a275-fc271e5d27ea")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.108465" elapsed="0.005717"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.119169" level="INFO">${href} = https://twitter.com/saucelabs</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.114349" elapsed="0.004863"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.119632" elapsed="0.000120"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.119378" elapsed="0.000424"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="1625a637-79f2-4b19-9988-7f4ec92dd971")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.114271" elapsed="0.005567"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.124642" level="INFO">${href} = https://www.facebook.com/saucelabs</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.120006" elapsed="0.004680"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.125124" elapsed="0.000130"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.124855" elapsed="0.000460"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="e063d7b6-6da0-4b23-85e8-867b364ef71a")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.119931" elapsed="0.005419"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.130550" level="INFO">${href} = https://www.linkedin.com/company/sauce-labs/</msg>
+<var>${href}</var>
+<arg>${el}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.125520" elapsed="0.005074"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.131043" elapsed="0.000125"/>
+</kw>
+<arg>'${href}' != 'None' and '${href}' != ''</arg>
+<arg>Append To List</arg>
+<arg>${all_links}</arg>
+<arg>${href}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.130775" elapsed="0.000443"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1ad2ea5a-d1ba-4ce5-8374-10694d7e5f0d", element="a7eae8e3-591b-4842-9a17-221c6d1cb637")&gt;</var>
+<status status="PASS" start="2025-05-20T17:17:15.125444" elapsed="0.005811"/>
+</iter>
+<var>${el}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2025-05-20T17:17:15.012686" elapsed="0.118611"/>
+</for>
+<return>
+<value>${all_links}</value>
+<status status="PASS" start="2025-05-20T17:17:15.131363" elapsed="0.000061"/>
+</return>
+<msg time="2025-05-20T17:17:15.131556" level="INFO">@{all_links} = [ https://www.saucedemo.com/inventory.html# | https://saucelabs.com/ | https://www.saucedemo.com/inventory.html# | https://www.saucedemo.com/inventory.html# | https://www.saucedemo.com/inventory.html#...</msg>
+<var>@{all_links}</var>
+<status status="PASS" start="2025-05-20T17:17:15.007723" elapsed="0.123859"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.134186" level="INFO">${original_url} = https://www.saucedemo.com/inventory.html</msg>
+<var>${original_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.131683" elapsed="0.002539"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-20T17:17:15.134487" level="INFO">Original URL is: https://www.saucedemo.com/inventory.html</msg>
+<arg>Original URL is: ${original_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.134349" elapsed="0.000176"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-20T17:17:15.134870" level="INFO">Verifying link: https://www.saucedemo.com/inventory.html#</msg>
+<arg>Verifying link: ${url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-20T17:17:15.134784" elapsed="0.000118"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:17:15.135063" level="INFO">Opening url 'https://www.saucedemo.com/inventory.html#'</msg>
+<msg time="2025-05-20T17:19:29.597635" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:199:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:747:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:559:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.takeScreenshot@chrome://remote/content/marionette/driver.sys.mjs:2764:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<msg time="2025-05-20T17:19:29.599423" level="FAIL">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58896): Read timed out. (read timeout=120)</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-05-20T17:17:15.134980" elapsed="134.748027">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58896): Read timed out. (read timeout=120)</status>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//title | //body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-05-20T17:19:29.883292" elapsed="0.000041"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="NOT RUN" start="2025-05-20T17:19:29.883418" elapsed="0.000023"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Page title after clicking: ${title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-05-20T17:19:29.883515" elapsed="0.000019"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>${original_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2025-05-20T17:19:29.883597" elapsed="0.000018"/>
+</kw>
+<var name="${url}">https://www.saucedemo.com/inventory.html#</var>
+<status status="FAIL" start="2025-05-20T17:17:15.134712" elapsed="134.748961">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58896): Read timed out. (read timeout=120)</status>
+</iter>
+<var>${url}</var>
+<value>@{all_links}</value>
+<status status="FAIL" start="2025-05-20T17:17:15.134581" elapsed="134.749165">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58896): Read timed out. (read timeout=120)</status>
+</for>
+<status status="FAIL" start="2025-05-20T17:17:15.007520" elapsed="134.876345">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58896): Read timed out. (read timeout=120)</status>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="FAIL" start="2025-05-20T17:17:06.918143" elapsed="142.965790">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58896): Read timed out. (read timeout=120)</status>
+</kw>
+<status status="FAIL" start="2025-05-20T17:17:06.917658" elapsed="142.966560">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=58896): Read timed out. (read timeout=120)</status>
+</test>
+<doc>To getting all the links</doc>
+<status status="FAIL" start="2025-05-20T17:17:06.606388" elapsed="143.278350"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Link" id="s1" pass="0" fail="1" skip="0">Link</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-20T17:17:06.915535" level="WARN">Error in file 'C:\pythonselenium\SwagLabProject\Resources\DashboardResource.robot' on line 22: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-05-20T17:19:29.597635" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:199:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:747:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:559:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.takeScreenshot@chrome://remote/content/marionette/driver.sys.mjs:2764:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+</errors>
+</robot>
